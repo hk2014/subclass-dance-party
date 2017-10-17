@@ -27,10 +27,14 @@ var BlinkyDancer = function(top, left, timeBetweenSteps){
 
 BlinkyDancer.prototype = Object.create(Dancer.prototype);
 BlinkyDancer.prototype.constructor = BlinkyDancer;
-
+//NOTE EXPLAIN SETTIMEOUT HERE
 BlinkyDancer.prototype.step = function() {
-  Dancer.prototype.step.call(this);
-  this.$node.toggle();
+  var context = this;
+  console.log('context: ', context);
+  setTimeout(function(){
+    context.step();
+  }, this.timeBetweenSteps);
+  this.$node.fadeToggle();
 };
 
 // BlinkyDancer.prototype.toggle = function() {
