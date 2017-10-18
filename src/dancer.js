@@ -35,13 +35,14 @@
 
 
 var Dancer = function(top, left, timeBetweenSteps){
-  this.$node = $('<span class="dancer"></span>');
-  this.step();
-  this.setPosition(top, left);
+
+  
+  this.timeBetweenSteps = timeBetweenSteps;
+ 
 };
 
 Dancer.prototype.step = function(){
-  console.log('blinkydancers this:', this);
+  //ßconsole.log('blinkydancers this:', this);
   setTimeout(this.step, this.timeBetweenSteps);
 };
 

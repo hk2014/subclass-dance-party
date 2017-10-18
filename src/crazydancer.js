@@ -18,9 +18,9 @@
 //   return blinkyDancer;
 // };
 
-var BlinkyDancer = function(top, left, timeBetweenSteps){
-  this.$node = $('<span class="dancer"></span>');
+var CrazyDancer = function(top, left, timeBetweenSteps){
   // this.blinkyDancer = Dancer(top, left, timeBetweenSteps);
+  this.$node = $('<span class="dancer3"></span>');
   Dancer.call(this, top, left, timeBetweenSteps);
   this.step();
   this.setPosition(top, left);
@@ -28,10 +28,10 @@ var BlinkyDancer = function(top, left, timeBetweenSteps){
   //var oldStep = Dancer.step;
 };
 
-BlinkyDancer.prototype = Object.create(Dancer.prototype);
-BlinkyDancer.prototype.constructor = BlinkyDancer;
+CrazyDancer.prototype = Object.create(Dancer.prototype);
+CrazyDancer.prototype.constructor = CrazyDancer;
 //NOTE EXPLAIN SETTIMEOUT HERE
-BlinkyDancer.prototype.step = function() {
+CrazyDancer.prototype.step = function() {
   var context = this;
 
   //console.log(this.timeBetweenSteps);  
@@ -40,9 +40,9 @@ BlinkyDancer.prototype.step = function() {
     context.step();
   }, this.timeBetweenSteps);
    
-  this.$node.fadeToggle();
+  this.$node.animate({ opacity: 0.25, left: "+=800"}, 5000, function(){});
 };
 
-// BlinkyDancer.prototype.toggle = function() {
+// SlidingDancer.prototype.toggle = function() {
 
 // };

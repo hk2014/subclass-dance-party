@@ -28,6 +28,40 @@ $(document).ready(function() {
       Math.random() * 1000
     );
     $('body').append(dancer.$node);
+
+    
+  
   });
+
+  $('.addDancerButton2').on('click', function(event) {
+
+  
+    var dancerMakerFunctionName2 = $(this).data('dancer-maker-function-name2');
+    var dancerMakerFunction2 = window[dancerMakerFunctionName2];
+
+    var dancer2 = new dancerMakerFunction2(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000
+    );
+    $('body').append(dancer2.$node);
+
+  });
+
+  $('.addDancerButton3').on('click', function(event) {
+
+  
+    var dancerMakerFunctionName3 = $(this).data('dancer-maker-function-name3');
+    var dancerMakerFunction3 = window[dancerMakerFunctionName3];
+
+    var dancer3 = new dancerMakerFunction3(
+      $("body").height() * Math.random(),
+      $("body").width() * Math.random(),
+      Math.random() * 1000
+    );
+    $('body').append(dancer3.$node);
+
+  });
+
 });
 
